@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.DependencyInjection;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -56,6 +56,8 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
+            app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
             app.UseAuthorization();
 
